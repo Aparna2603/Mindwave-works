@@ -1,0 +1,183 @@
+# AKS COMMAND FOR RENEWAL
+
+https://docs.microsoft.com/en-us/azure/aks/update-credentials
+
+AKS UPDATE COMMAND
+az aks update-credentials --resource-group amity-uat --name amity-uat-AKS  --service-principal a9e094e9-e785-4ec7-bb92-22ec59f7562d   --client-secret 1948b336-0bdf-4608-98eb-76e477c33fb9
+
+az aks update-credentials --resource-group Oxcare-Production --name oxcareAKS  --service-principal 0c139047-8bc3-4177-bc77-311963203ea2   --client-secret a9cd27cb-07a2-41bd-9da2-c819fcf3b3e7
+
+### TO RESET
+
+az ad sp create-for-rbac --skip-assignment
+
+{
+"appId": "c0801a7b-8a3d-404f-84a1-438197638b80",
+"displayName": "azure-cli-2021-06-30-02-06-47",
+"name": "http://azure-cli-2021-06-30-02-06-47",
+"password": "tk~Z-uTwRUM.MWs.CvKtXT~458SBqJsrTB",
+"tenant": "ef12ef9f-c6ef-4fd4-8325-d209c26a809d"
+}
+
+### COMMAND
+
+az aks update-credentials --resource-group Oxcare-Production --name oxcareAKS --reset-service-principal --service-principal 935c7547-bc0d-446b-9a72-05e7f9832671 --client-secret V4Ud.jTVh_zDayoCP1Z8xK.T_zt2hsRpd~
+
+az aks update-credentials --resource-group hereworcs-uat --name hereworcs-uat-AKS --reset-service-principal --service-principal 7f3e108d-30aa-4a8e-bd14-e3885a1ea3a5 --client-secret INMel5DlVCCypv1oHVUG_rpQLR1lYEI-CC
+
+az aks update-credentials --resource-group hereworcs-uat --name hereworcs-uat-AKS --reset-service-principal --service-principal 46224769-6e53-4d26-ad55-13e7d5b0d37e   --client-secret W7.NeYz168Y~NflQKZETW.mARR.dZBNl4M
+
+# AKS EXPIRATION
+
+az account show
+
+az account list --output table
+
+az account set --subscription Amity-Pay-As-You-Go
+
+az account set --subscription Hereworcs-Pay-As-You-Go
+
+az account set --subscription Mindwave-Pay-as-you-go
+
+az account set --subscription Oxcare-Pay-As-You-Go
+
+az account set --subscription PD-Care-Pay-As-You-Go
+
+az account set --subscription LiverpoolCAMHS
+
+# The below command will get the detail of the particular cluster.
+
+az aks show --resource-group amity-production --name amity-prod-AKS
+
+az aks show --resource-group amity-uat --name amity-uat-AKS
+
+az aks show --resource-group sandbox --name sandboxamityaks
+
+az aks show --resource-group hereworc-prod --name hereworcprod-AKS
+
+az aks show --resource-group hereworcs-uat --name hereworcs-uat-AKS
+
+az aks show --resource-group Mindwave-PHR-Staging --name Mindwave-PHR-Staging-K8s
+
+az aks show --resource-group CommonResources --name MindwavesAKS
+
+az aks show --resource-group phr-opensource --name opensourceAKS
+
+az aks show --resource-group Oxcare-Production --name oxcareAKS
+
+az aks show --resource-group PdcareProduction --name pdcareAKS
+
+az aks show --resource-group liverpoolcamhsuat --name liverpoolcamhsaks
+
+az aks show --
+
+# The below command will show the date of expiry and date of issued.
+
+# Alternate command to show the expiry date
+
+az ad sp show --id d776b62e-d636-49ab-99e3-7c35c57a9c95
+
+az ad sp show --id a9e094e9-e785-4ec7-bb92-22ec59f7562d
+
+az ad sp credential list --id 1fe3e8b7-068c-4e7c-8f56-613aff0dd338
+
+az ad sp show --id 1b0bdd28-a166-45e1-b916-c33a75fd3a10
+
+az ad sp show --id 74f788dd-81fe-42b6-a11c-ca1645fc34fc
+
+az ad sp credential list --id bc2f4211-615a-41cf-bd33-8e5559e06714
+
+az ad sp credential list --id 0ed6a1ba-4c20-49cc-827c-c1a86ef9c047
+
+az ad sp credential list --id 0cf2bdc6-8ab0-462b-b699-4f0f253ecbb9
+
+az ad sp credential list --id 935c7547-bc0d-446b-9a72-05e7f9832671
+
+az ad sp credential list --id eb63e63b-b479-43d8-b173-ab34b36cdb0f
+
+az ad sp show --id 7f60956a-85e4-47a7-adb2-fd30eb93649a
+
+### others
+
+az ad sp credential list --id 935c7547-bc0d-446b-9a72-05e7f9832671
+
+[
+{
+"additionalProperties": null,
+"customKeyIdentifier": "rbac",
+"endDate": "2022-06-30T03:20:11.486063+00:00",
+"keyId": "23e42d11-f929-426e-9244-d36b0fa149e3",
+"startDate": "2021-06-30T03:20:11.486063+00:00",
+"value": null
+}
+]
+
+az aks nodepool add \
+ --resource-group Oxcare-Production \
+ --cluster-name oxcareAKS \
+ --name mynodepool \
+ --node-count 3 \
+ --vnet-subnet-id /subscriptions/edb3b2c9-8c76-4a6f-8516-ac48bec41d8b/resourceGroups/Oxcare-Production/providers/Microsoft.Network/virtualNetworks/OxcareProductionVnet/subnets/SN1
+
+az aks nodepool add --resource-group Oxcare-Production --cluster-name oxcareAKS --name mynodepool --node-count 1 --max-pods 90 --vnet-subnet-id /subscriptions/edb3b2c9-8c76-4a6f-8516-ac48bec41d8b/resourceGroups/Oxcare-Production/providers/Microsoft.Network/virtualNetworks/OxcareProductionVnet/subnets/SN1
+
+az resource update --ids /subscriptions/edb3b2c9-8c76-4a6f-8516-ac48bec41d8b/resourceGroups/Oxcare-Production/providers/Microsoft.ContainerService/managedClusters/oxcareAKS
+
+## LINKS
+
+### Use kubenet networking with your own IP address ranges in Azure Kubernetes Service (AKS)
+
+https://docs.microsoft.com/en-us/azure/aks/configure-kubenet
+
+### Create and manage multiple node pools for a cluster in Azure Kubernetes Service (AKS)
+
+https://docs.microsoft.com/en-us/azure/aks/use-multiple-node-pools#add-a-node-pool-with-a-unique-subnet-preview
+
+az aks update-credentials --resource-group amity-uat --name amity-uat-AKS --reset-service-principal --service-principal b19559fc-3a51-4eca-b5c3-f2967f1e7147 --client-secret 4UxEuCuF7z2vXBNx4m1Zhl2lv-xK37NWZG
+
+az aks update-credentials --resource-group hereworc-prod --name hereworcprod-AKS --reset-service-principal --service-principal 5e158369-6ed1-4872-9dfb-9175050eaea8 --client-secret 45VvYSBea0_Z.b0IFSZMA-xS6U1OeqFxik
+
+NEW CLIENT SECRET FOR HEREWORC PRODUCTION
+
+{
+"appId": "5e158369-6ed1-4872-9dfb-9175050eaea8",
+"displayName": "azure-cli-2021-07-26-07-16-44",
+"name": "http://azure-cli-2021-07-26-07-16-44",
+"password": "45VvYSBea0_Z.b0IFSZMA-xS6U1OeqFxik",
+"tenant": "ef12ef9f-c6ef-4fd4-8325-d209c26a809d"
+}
+
+az aks update-credentials --resource-group hereworc-prod --name hereworcprod-AKS  --service-principal a9e094e9-e785-4ec7-bb92-22ec59f7562d   --client-secret 1948b336-0bdf-4608-98eb-76e477c33fb9
+
+az aks update-credentials --resource-group amity-production --name amity-prod-AKS --reset-service-principal --service-principal e68fab39-464c-4c83-a79d-2d4320e8c938   --client-secret vIae7PE-lTsxdCJwmoSi3-94J~o.0tAdJQs
+
+az aks update-credentials --resource-group amity-production --name amity-prod-AKS --reset-service-principal --service-principal a4c9a32c-6175-439a-9fa4-6060a243e548 --client-secret Tvz6juy_GVToCl90d8.M2YGZz.ZTp_5ZvR
+
+{
+"appId": "a4c9a32c-6175-439a-9fa4-6060a243e548",
+"displayName": "azure-cli-2021-09-03-19-39-28",
+"name": "http://azure-cli-2021-09-03-19-39-28",
+"password": "Tvz6juy_GVToCl90d8.M2YGZz.ZTp_5ZvR",
+"tenant": "ef12ef9f-c6ef-4fd4-8325-d209c26a809d"
+}
+
+
+
+
+
+az aks get-upgrades --resource-group Oxcare-Production --name oxcareAKS --output table
+
+
+az ad sp create-for-rbac --skip-assignment
+
+{
+  "appId": "02f50b69-3adb-4516-bf57-96594dd8529b",
+  "displayName": "azure-cli-2022-01-05-07-04-05",
+  "name": "02f50b69-3adb-4516-bf57-96594dd8529b",
+  "password": "1pfrSYlZ1BEMP_gmFfb_lKe7BHdvl7O.RR",
+  "tenant": "ef12ef9f-c6ef-4fd4-8325-d209c26a809d"
+}
+
+
+
+az aks update-credentials --resource-group CommonResources --name MindwavesAKS --reset-service-principal --service-principal 02f50b69-3adb-4516-bf57-96594dd8529b --client-secret 1pfrSYlZ1BEMP_gmFfb_lKe7BHdvl7O.RR

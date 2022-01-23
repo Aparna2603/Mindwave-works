@@ -1,0 +1,73 @@
+******************************** KUBECTL COMMANDS ***********************
+1)   **** To view the clusters available in the kubeconfig file****
+
+
+kubectl config view
+
+
+2) **** TO display first user ****
+  kubectl config view -o jsonpath='{.users[].name}
+
+3) **** TO diplay the list of contexts available in the all clusters ****
+       kubectl config get-contexts
+
+4) **** TO check the current context in present ****
+      kubectl config current-context
+
+5)  **** To config the context name  at present ****
+        kubectl config use-context Mindwave-PHR-Staging-K8s
+
+6)  **** get namespace name ****
+         kubectl get ns
+
+7) **** get pods ******
+       kubectl get pods --namespace=namespace name
+
+8) **** To execute commands inside the pods ****
+      kubectl exec -it pod name sh -n(namespace name)
+
+9) **** TO check the logs of pods in clusters ****
+       Kubectl logs -f pod name -n namespace name
+
+AMITY:
+
+10) **** Get credentials for the cluster **** AMITY_UAT ******
+     az aks get-credentials --resource-group amity-uat --name amity-uat-AKS
+
+11)**** Get credentials for the cluster **** AMITY-PROD ******
+    az aks get-credentials --resource-group amity-production --name amity-prod-AKS
+
+12)**** Get credentials for the cluster **** AMITY-SANDBOX ******
+     az aks get-credentials --resource-group sandbox --name sandboxamityaks
+
+HEREWORCS:
+
+
+13) **** Get credentials for the cluster **** HEREWORCS-PRODUCTION ******
+        az aks get-credentials --resource-group hereworc-prod --name hereworcprod-AKS
+
+14)**** Get credentials for the cluster **** HEREWORCS-UAT ******
+       az aks get-credentials --resource-group hereworcs-uat --name hereworcs-uat-AKS
+
+OXCARE:
+
+15) **** Get credentials for the cluster **** OXCARE-UAT ******
+
+LiverpoolCAMHS:
+
+16)     **** Get credentials for the cluster **** LIVERPOOLCAMHS-UAT ******
+     az aks get-credentials --resource-group liverpoolcamhsuat --name liverpoolcamhsaks --subscription LiverpoolCAMHS
+
+
+PHR COMMON STAGING SERVER:
+
+
+16) **** Get credentials for the cluster **** PHR COMMON STAGING******
+   az aks get-credentials --resource-group Mindwave-PHR-Staging --name Mindwave-PHR-Staging-K8
+
+
+17) **** Get credentials for the cluster **** RESEARCH COMMON  STAGING******
+      az aks get-credentials --resource-group  CommonResources --name MindwavesAKS
+
+
+18)

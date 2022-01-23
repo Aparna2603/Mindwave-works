@@ -1,0 +1,33 @@
+## Command to start minikube
+
+minikube start
+
+## COMMAND TO LIST THE LISTENING PORT
+
+sudo lsof -i -P -n | grep LISTEN
+
+## COMMAND TO LIST THE LISTENING PORT 0F 8888
+
+sudo lsof -i:8888
+
+## Naming the container
+
+docker run -d p 3000:80 --name=app1 myimage1
+
+## OTHERS
+
+docker images
+
+docker ps
+
+docker run -d redis
+
+docker run -d -p6000:6379 redis
+
+docker run -d -p6000:6379 --name redis-old redis
+
+docker logs redis-old
+
+docker exec -it container id /bin/bash
+
+docker scan
