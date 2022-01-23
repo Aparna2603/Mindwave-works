@@ -45,6 +45,8 @@ az account set --subscription PD-Care-Pay-As-You-Go
 
 az account set --subscription LiverpoolCAMHS
 
+az account set --subscription Acacium-Pay-As-You-Go
+
 # The below command will get the detail of the particular cluster.
 
 az aks show --resource-group amity-production --name amity-prod-AKS
@@ -68,6 +70,9 @@ az aks show --resource-group Oxcare-Production --name oxcareAKS
 az aks show --resource-group PdcareProduction --name pdcareAKS
 
 az aks show --resource-group liverpoolcamhsuat --name liverpoolcamhsaks
+
+
+az aks  get-credentials --name acaciumprodaks --resource-group rg-acaciumprod --subscription Acacium-Pay-As-You-Go
 
 az aks show --
 
